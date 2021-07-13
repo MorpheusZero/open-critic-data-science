@@ -31,7 +31,7 @@ export class DataAnalyzer {
 
         // Get the score floor and add it to scores
         const scoreFormatted = Math.floor(detail.score);
-        if (scoreFormatted > 0) {
+        if (scoreFormatted > 0 && releaseDateYear > 1900) {
           scores.push({
             year: releaseDateYear,
             score: scoreFormatted,

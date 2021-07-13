@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js" integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body>
+        <h1>Playstation 5 Games</h1>
+        <div>
+            <canvas id="ps5Chart"></canvas>
+        </div>
+        <script src="ps5_data.js"></script>
+        <script>
+            const labels = PS5DATA.LABELS;
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'PS5 Review Scores By Date',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: PS5DATA.SCORES,
+                }]
+            };            const config = {
+                type: 'line',
+                data,
+                options: {}
+            };
+
+            const ps5Chart = new Chart(
+                document.getElementById('ps5Chart'),
+                config
+            );
+        </script>
+    </body>
+</html>
